@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/firstChildFragment"
+        android:name="in.pagerview.navigation.databinding.onbackstack.fragments.FirstChildFragment"
+        android:label="fragment_first_child"
+        tools:layout="@layout/fragment_first_child" />
+    <fragment
+        android:id="@+id/pagerFirstFragment"
+        android:name="in.pagerview.navigation.databinding.onbackstack.fragments.PagerFirstFragment"
+        android:label="fragment_first_pager"
+        tools:layout="@layout/fragment_first_pager" >
+        <action
+            android:id="@+id/action_pagerFirstFragment_to_firstChildFragment"
+            app:destination="@id/firstChildFragment" />
+        <action
+            android:id="@+id/action_pagerFirstFragment_to_secondChildFragment"
+            app:destination="@id/secondChildFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forthChildFragment"
+        android:name="in.pagerview.navigation.databinding.onbackstack.fragments.ForthChildFragment"
+        android:label="fragment_forth_child"
+        tools:layout="@layout/fragment_forth_child" />
+    <fragment
+        android:id="@+id/secondChildFragment"
+        android:name="in.pagerview.navigation.databinding.onbackstack.fragments.SecondChildFragment"
+        android:label="fragment_second_child"
+        tools:layout="@layout/fragment_second_child" />
+    <fragment
+        android:id="@+id/thirdChildFragment"
+        android:name="in.pagerview.navigation.databinding.onbackstack.fragments.ThirdChildFragment"
+        android:label="fragment_third_child"
+        tools:layout="@layout/fragment_third_child" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="in.pagerview.navigation.databinding.onbackstack.fragments.MainFragment"
+        android:label="fragment_main_pager"
+        tools:layout="@layout/fragment_main_pager" >
+        <action
+            android:id="@+id/action_mainFragment_to_thirdChildFragment2"
+            app:destination="@id/thirdChildFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_pagerFirstFragment2"
+            app:destination="@id/pagerFirstFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_forthChildFragment"
+            app:destination="@id/forthChildFragment" />
+    </fragment>
+</navigation>

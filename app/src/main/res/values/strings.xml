@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">RemoveViewError</string>
+
+    <string name="pager_fragment_button">Call Pager Fragment</string>
+    <string name="first_fragment_button">Call First Child Fragment</string>
+    <string name="second_fragment_button">Call Second Child Fragment</string>
+    <string name="third_fragment_button">Call Third Child Fragment</string>
+    <string name="forth_fragment_button">Call Forth Child Fragment</string>
+
+    <string name="first_child_fragment_button">1\nFirst Child Fragment</string>
+    <string name="second_child_fragment_button">2\nSecond Child Fragment</string>
+    <string name="third_child_fragment_button">3\nThird Child Fragment</string>
+    <string name="forth_child_fragment_button">4\nForth Child Fragment</string>
+</resources>
