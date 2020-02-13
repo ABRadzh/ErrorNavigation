@@ -17,7 +17,7 @@ import in.pagerview.navigation.databinding.onbackstack.viewmodels.FirstTabFragme
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FirstTabFragment extends Fragment {
+public class FirstTabFragment extends BaseFragment {
 
     private FragmentFirstBinding binding;
 
@@ -34,6 +34,12 @@ public class FirstTabFragment extends Fragment {
             binding = DataBindingUtil.inflate(inflater, R.layout.fragment_first, container, false);
             binding.setPresenter(new FirstTabFragmentViewModel());
         }
+        getBindingRoot();
         return binding.getRoot();
+    }
+
+    @Override
+    public void getBindingRoot() {
+        setBindingRoot(binding.getRoot());
     }
 }

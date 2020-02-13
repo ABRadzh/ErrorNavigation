@@ -18,7 +18,7 @@ import in.pagerview.navigation.databinding.onbackstack.databinding.FragmentSecon
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SecondChildFragment extends Fragment {
+public class SecondChildFragment extends BaseFragment {
 
     private FragmentSecondChildBinding binding;
 
@@ -32,7 +32,12 @@ public class SecondChildFragment extends Fragment {
             binding = DataBindingUtil.inflate(inflater, R.layout.fragment_second_child, container, false);
             binding.setPresenter(new SecondChildFragmentViewModel());
         }
+        getBindingRoot();
         return binding.getRoot();
     }
 
+    @Override
+    public void getBindingRoot() {
+        setBindingRoot(binding.getRoot());
+    }
 }

@@ -17,7 +17,7 @@ import in.pagerview.navigation.databinding.onbackstack.databinding.FragmentThird
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ThirdChildFragment extends Fragment {
+public class ThirdChildFragment extends BaseFragment {
 
     private FragmentThirdChildBinding binding;
 
@@ -31,7 +31,12 @@ public class ThirdChildFragment extends Fragment {
             binding = DataBindingUtil.inflate(inflater, R.layout.fragment_third_child, container, false);
             binding.setPresenter(new ThirdChildFragmentViewModel());
         }
+        getBindingRoot();
         return binding.getRoot();
     }
 
+    @Override
+    public void getBindingRoot() {
+        setBindingRoot(binding.getRoot());
+    }
 }

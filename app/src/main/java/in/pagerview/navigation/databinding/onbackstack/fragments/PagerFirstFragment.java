@@ -19,7 +19,7 @@ import in.pagerview.navigation.databinding.onbackstack.viewmodels.FirstFragmentV
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PagerFirstFragment extends Fragment {
+public class PagerFirstFragment extends BaseFragment {
 
     private FragmentFirstPagerBinding binding;
     private ChildPagerAdapter childPagerAdapter;
@@ -42,6 +42,12 @@ public class PagerFirstFragment extends Fragment {
                 );
             }
         }
+        getBindingRoot();
         return binding.getRoot();
+    }
+
+    @Override
+    public void getBindingRoot() {
+        setBindingRoot(binding.getRoot());
     }
 }

@@ -18,7 +18,7 @@ import in.pagerview.navigation.databinding.onbackstack.viewmodels.ThirdTabFragme
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ThirdTabFragment extends Fragment {
+public class ThirdTabFragment extends BaseFragment {
 
     private FragmentThirdBinding binding;
 
@@ -29,13 +29,18 @@ public class ThirdTabFragment extends Fragment {
     public ThirdTabFragment() {
     }
 
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (binding == null) {
             binding = DataBindingUtil.inflate(inflater, R.layout.fragment_third, container, false);
             binding.setPresenter(new ThirdTabFragmentViewModel());
         }
+        getBindingRoot();
         return binding.getRoot();
+    }
+
+    @Override
+    public void getBindingRoot() {
+        setBindingRoot(binding.getRoot());
     }
 }

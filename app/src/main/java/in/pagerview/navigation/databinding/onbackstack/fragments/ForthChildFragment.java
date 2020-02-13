@@ -17,7 +17,7 @@ import in.pagerview.navigation.databinding.onbackstack.databinding.FragmentForth
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ForthChildFragment extends Fragment {
+public class ForthChildFragment extends BaseFragment {
 
     private FragmentForthChildBinding binding;
 
@@ -31,7 +31,12 @@ public class ForthChildFragment extends Fragment {
             binding = DataBindingUtil.inflate(inflater, R.layout.fragment_forth_child, container, false);
             binding.setPresenter(new ForthChildFragmentViewModel());
         }
+        getBindingRoot();
         return binding.getRoot();
     }
 
+    @Override
+    public void getBindingRoot() {
+        setBindingRoot(binding.getRoot());
+    }
 }

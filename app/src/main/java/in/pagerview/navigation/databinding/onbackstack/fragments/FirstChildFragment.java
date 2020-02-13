@@ -18,7 +18,7 @@ import in.pagerview.navigation.databinding.onbackstack.databinding.FragmentFirst
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FirstChildFragment extends Fragment {
+public class FirstChildFragment extends BaseFragment {
 
     private FragmentFirstChildBinding binding;
 
@@ -32,6 +32,13 @@ public class FirstChildFragment extends Fragment {
             binding = DataBindingUtil.inflate(inflater, R.layout.fragment_first_child, container, false);
             binding.setPresenter(new FirstChildFragmentViewModel());
         }
+        getBindingRoot();
         return binding.getRoot();
     }
+
+    @Override
+    public void getBindingRoot() {
+        setBindingRoot(binding.getRoot());
+    }
+
 }

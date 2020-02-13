@@ -18,7 +18,7 @@ import in.pagerview.navigation.databinding.onbackstack.databinding.FragmentMainP
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MainFragment extends Fragment {
+public class MainFragment extends BaseFragment {
 
     private FragmentMainPagerBinding binding;
     private MainPagerAdapter mainPageAdapter;
@@ -41,6 +41,12 @@ public class MainFragment extends Fragment {
                 );
             }
         }
+        getBindingRoot();
         return binding.getRoot();
+    }
+
+    @Override
+    public void getBindingRoot() {
+        setBindingRoot(binding.getRoot());
     }
 }

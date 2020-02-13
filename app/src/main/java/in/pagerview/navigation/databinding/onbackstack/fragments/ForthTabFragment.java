@@ -18,7 +18,7 @@ import in.pagerview.navigation.databinding.onbackstack.viewmodels.ForthTabFragme
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ForthTabFragment extends Fragment {
+public class ForthTabFragment extends BaseFragment {
 
     private FragmentForthBinding binding;
 
@@ -36,7 +36,12 @@ public class ForthTabFragment extends Fragment {
             binding = DataBindingUtil.inflate(inflater, R.layout.fragment_forth, container, false);
             binding.setPresenter(new ForthTabFragmentViewModel());
         }
+        getBindingRoot();
         return binding.getRoot();
     }
 
+    @Override
+    public void getBindingRoot() {
+        setBindingRoot(binding.getRoot());
+    }
 }

@@ -18,7 +18,7 @@ import in.pagerview.navigation.databinding.onbackstack.viewmodels.FifthTabFragme
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FifthTabFragment extends Fragment {
+public class FifthTabFragment extends BaseFragment {
 
     private FragmentFifthBinding binding;
 
@@ -36,7 +36,19 @@ public class FifthTabFragment extends Fragment {
             binding = DataBindingUtil.inflate(inflater, R.layout.fragment_fifth, container, false);
             binding.setPresenter(new FifthTabFragmentViewModel());
         }
+        getBindingRoot();
         return binding.getRoot();
     }
 
+    @Override
+    public void getBindingRoot() {
+        setBindingRoot(binding.getRoot());
+    }
+
+//    @Override
+//    public void onDestroyView() {
+//        super.onDestroyView();
+//        if(binding.getRoot().getParent() != null)
+//            ((ViewGroup)binding.getRoot().getParent()).removeView(binding.getRoot());
+//    }
 }

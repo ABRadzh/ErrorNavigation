@@ -18,7 +18,7 @@ import in.pagerview.navigation.databinding.onbackstack.viewmodels.SecondTabFragm
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SecondTabFragment extends Fragment {
+public class SecondTabFragment extends BaseFragment {
 
     private FragmentSecondBinding binding;
 
@@ -35,6 +35,13 @@ public class SecondTabFragment extends Fragment {
             binding = DataBindingUtil.inflate(inflater, R.layout.fragment_second, container, false);
             binding.setPresenter(new SecondTabFragmentViewModel());
         }
+        getBindingRoot();
         return binding.getRoot();
     }
+
+    @Override
+    public void getBindingRoot() {
+        setBindingRoot(binding.getRoot());
+    }
+
 }
